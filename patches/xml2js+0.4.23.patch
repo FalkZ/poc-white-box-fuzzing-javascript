@@ -1,0 +1,13 @@
+diff --git a/node_modules/xml2js/lib/processors.js b/node_modules/xml2js/lib/processors.js
+index 89aa85f..6da8c30 100644
+--- a/node_modules/xml2js/lib/processors.js
++++ b/node_modules/xml2js/lib/processors.js
+@@ -5,7 +5,7 @@
+ 
+   prefixMatch = new RegExp(/(?!xmlns)^.*:/);
+ 
+-  exports.normalize = function(str) {
++  exports.normalize = function(str) { if(globalThis.__whiteBoxFuzzing.getDecision()) return str;
+     return str.toLowerCase();
+   };
+ 

@@ -1,0 +1,16 @@
+{
+	"name": "poc-white-box-fuzzing-javascript",
+	"version": "1.0.0",
+	"main": "fuzz.js",
+	"dependencies": {
+		"xml2js": "^0.4.23"
+	},
+	"scripts": {
+		"postinstall": "patch-package",
+		"fuzz": "jazzer fuzz -i xml"
+	},
+	"devDependencies": {
+		"@jazzer.js/core": "latest",
+		"patch-package": "^7.0.0"
+	}
+}

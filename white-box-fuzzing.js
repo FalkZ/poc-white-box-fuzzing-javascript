@@ -14,6 +14,10 @@ class WhiteBoxFuzzing {
 
     return value;
   }
+
+  getString() {
+    return this.#provider.consumeString(4096);
+  }
 }
 
 module.exports.initializeWhiteBoxFuzzing = (data) => {

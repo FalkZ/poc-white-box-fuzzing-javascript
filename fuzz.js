@@ -14,7 +14,9 @@ module.exports.fuzz = async function (data) {
   initializeWhiteBoxFuzzing(data);
 
   try {
-    await xml2js.parseStringPromise(data.toString(), { normalizeTags: true });
+    await xml2js.parseStringPromise(globalThis.__whiteBoxFuzzing.getString(), {
+      normalizeTags: true,
+    });
   } catch (error) {
     if (!ignoredError(error)) throw error;
   }
